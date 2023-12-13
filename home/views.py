@@ -4,9 +4,12 @@ from .models import *
 def home(request):
     views = {}
     views['categories'] = Category.objects.all()
+    views['all__news'] = News.objects.all()
     views['featured_news'] = News.objects.filter(featured = True)
     views['popular_news'] = News.objects.filter(popular=True)
     views['latest_news'] = News.objects.filter(latest=True)
+    views['sliders'] = News.objects.filter(slider=True)
+
     return render(request,'index.html',views)
 
 
