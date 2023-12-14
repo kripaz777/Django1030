@@ -63,8 +63,8 @@
                     </div>
                     {% for cat in categories %}
                     <div class="position-relative overflow-hidden mb-3" style="height: 80px;">
-                        <img class="img-fluid w-100 h-100" src="{{cat.image}}" style="object-fit: cover;">
-                        <a href="" class="overlay align-items-center justify-content-center h4 m-0 text-white text-decoration-none">
+                        <img class="img-fluid w-100 h-100" src="{{cat.image.url}}" style="object-fit: cover;">
+                        <a href="/category/{{cat.slug}}" class="overlay align-items-center justify-content-center h4 m-0 text-white text-decoration-none">
                             {{cat.name}}
                         </a>
                     </div>
