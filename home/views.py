@@ -20,6 +20,7 @@ def contact(request):
 def category(request,slug):
     views = {}
     cat_id = Category.objects.get(slug = slug).id
+    views['category_name'] = Category.objects.get(slug = slug).name
     views['cat_news'] = News.objects.filter(category_id=cat_id)
     return render(request,'category.html',views)
 
